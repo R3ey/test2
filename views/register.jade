@@ -1,0 +1,34 @@
+extends base
+
+block vars
+    - var title = 'Register'
+
+block body
+    div.top
+        div.title
+            h1 Create an Account
+    div.main
+        form(method="post")
+            input(type="hidden", name="_csrf", value=csrfToken)
+
+            span First Name:
+            br
+            input(type="text", name="firstName", required=true)
+            br
+
+            span Last Name:
+            br
+            input(type="text", name="lastName", required=true)
+            br
+
+            span Email:
+            br
+            input(type="email", name="email", required=true)
+            br
+
+            span Password:
+            br
+            input(type="password", name="password", required=true)
+            br
+
+            input(type="submit")

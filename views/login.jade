@@ -1,0 +1,28 @@
+extends base
+
+block vars
+  - var title = 'Login'
+
+block body
+  div.top
+    div.title
+      h1 Log Into Your Account
+
+  div.main
+    if error
+      p ERROR: #{error}
+
+    form(method="post")
+      input(type="hidden", name="_csrf", value=csrfToken)
+
+      span Email:
+      br
+      input(type="email", name="email", required=true)
+      br
+
+      span Password:
+      br
+      input(type="password", name="password", required=true)
+      br
+
+      input(type="submit" value="Odeslat")
